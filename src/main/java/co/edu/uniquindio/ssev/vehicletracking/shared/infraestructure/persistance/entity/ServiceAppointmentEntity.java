@@ -11,7 +11,7 @@ import lombok.Getter;
 
 @Entity
 @Getter
-public class ServiceAppointment {
+public class ServiceAppointmentEntity {
 	
 	@Id
 	private Long idServiceAppointment;
@@ -19,9 +19,9 @@ public class ServiceAppointment {
 	private String estado;
 	
 	@ManyToOne
-	private Service service;
+	private ServiceEntity service;
 	
 	@OneToMany
-	private List<Evidence> evidences;
+	private List<EvidenceEntity> evidences;
 
 }

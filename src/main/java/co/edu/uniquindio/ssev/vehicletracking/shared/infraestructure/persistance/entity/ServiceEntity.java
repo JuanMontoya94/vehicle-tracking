@@ -10,7 +10,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Service {
+public class ServiceEntity {
 	@Id
 	private Long idService;
 	

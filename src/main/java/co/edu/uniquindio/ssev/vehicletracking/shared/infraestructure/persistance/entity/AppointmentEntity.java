@@ -29,14 +29,14 @@ public class AppointmentEntity {
 	
 	@ManyToOne
     @JoinColumn(name = "idEmployee", nullable = false)
-    private Employee employee;
+    private EmployeeEntity employee;
 	
 	@OneToOne
 	@JoinColumn(name = "idEntry", nullable = false)
-	private Entry entry;
+	private EntryEntity entry;
 	
 	@OneToMany
-	private List<ServiceAppointment> serviceAppointments;
+	private List<ServiceAppointmentEntity> serviceAppointments;
 	
 
 
