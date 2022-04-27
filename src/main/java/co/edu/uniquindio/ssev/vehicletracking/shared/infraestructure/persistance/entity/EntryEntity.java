@@ -1,7 +1,5 @@
 package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +9,8 @@ import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.Setter;
-@Entity
+
+@Entity(name="entry")
 @Getter
 @Setter
 public class EntryEntity 

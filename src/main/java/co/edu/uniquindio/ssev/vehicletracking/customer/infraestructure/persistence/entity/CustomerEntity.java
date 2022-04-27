@@ -2,6 +2,7 @@ package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persiste
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Entity(name = "customer")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -29,8 +30,8 @@ public class CustomerEntity {
 	
 	private String phone;
 	
-	@OneToMany
-    @JoinColumn(name = "idVehicle", nullable = false)
+	@OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_customer")
 	private List<VehicleEntity> vehicles;
 
 }

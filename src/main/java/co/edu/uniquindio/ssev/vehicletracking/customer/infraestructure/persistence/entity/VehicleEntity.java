@@ -1,22 +1,19 @@
 package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Vehicle;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name="vehicle")
 @Getter
 @NoArgsConstructor
 public class VehicleEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long vin;
+	private String vin;
 	
 	private String model;
 	

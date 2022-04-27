@@ -4,12 +4,13 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
 
-@Entity
+@Entity(name="service_appointment")
 @Getter
 public class ServiceAppointmentEntity {
 	
@@ -22,6 +23,7 @@ public class ServiceAppointmentEntity {
 	private ServiceEntity service;
 	
 	@OneToMany
+	@JoinColumn(name = "id_service_appointment")
 	private List<EvidenceEntity> evidences;
 
 }

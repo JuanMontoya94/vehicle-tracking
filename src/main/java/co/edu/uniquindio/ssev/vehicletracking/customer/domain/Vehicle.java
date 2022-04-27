@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Vehicle {
 	
 	
-	private Long vin;
+	private String vin;
 	
 	private String model;
 	

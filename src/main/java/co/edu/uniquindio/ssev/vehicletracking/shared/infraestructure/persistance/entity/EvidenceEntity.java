@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+@Entity(name="evidence")
 @Getter
 @Setter
 public class EvidenceEntity {
