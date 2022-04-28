@@ -23,7 +23,7 @@ public class AppointmentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idAppointment;
+	private Long id;
 	private LocalDateTime date;
 	private String state;
 	

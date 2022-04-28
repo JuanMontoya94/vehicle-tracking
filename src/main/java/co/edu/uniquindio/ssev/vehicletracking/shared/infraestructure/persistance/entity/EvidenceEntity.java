@@ -15,7 +15,7 @@ public class EvidenceEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEvidence;
+	private Long id;
 	
 	private String urlRecourse;
 	

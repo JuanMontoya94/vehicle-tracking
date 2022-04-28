@@ -29,14 +29,14 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		
 		
 		
-		CustomerEntity customerEntity = new CustomerEntity(customer.getId(),customer.getName(),customer.getPhone(), vehicleEntities);
+		CustomerEntity customerEntity = new CustomerEntity(customer.getId(),customer.getName(),customer.getPhone(),customer.getCorreo(), vehicleEntities);
 		customerEntity = customerEntityRepository.save(customerEntity);  
 		
 		List<Vehicle> vehicles = customerEntity.getVehicles().stream()
 				.map(VehicleEntity::load)
 				.collect(Collectors.toList());
 	
-		return new Customer(customerEntity.getId(),customerEntity.getName(),customerEntity.getPhone(), vehicles);
+		return new Customer(customerEntity.getId(),customerEntity.getName(),customerEntity.getPhone(),customer.getCorreo(), vehicles);
 	}
 	
 	

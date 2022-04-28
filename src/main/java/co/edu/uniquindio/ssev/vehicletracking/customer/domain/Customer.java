@@ -16,9 +16,15 @@ public class Customer {
 	
 	private Long id;
 	
+	private String correo;
+	
 	private String name;
 	
 	private String phone;
+	
+	
+	
+	
 	
 	
 	private List<Vehicle> vehicles;

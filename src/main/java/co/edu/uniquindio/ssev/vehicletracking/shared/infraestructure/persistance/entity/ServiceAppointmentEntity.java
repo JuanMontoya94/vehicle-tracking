@@ -2,6 +2,7 @@ package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistanc
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -22,7 +23,7 @@ public class ServiceAppointmentEntity {
 	@ManyToOne
 	private ServiceEntity service;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_service_appointment")
 	private List<EvidenceEntity> evidences;
 
