@@ -13,7 +13,6 @@ public class CreateAppointment {
 	private AppointmentRepository appointmentRepository;
 	
 	public Appointment create(Appointment appointment) {
-		
 		return appointmentRepository.create(appointment);
 	}
 

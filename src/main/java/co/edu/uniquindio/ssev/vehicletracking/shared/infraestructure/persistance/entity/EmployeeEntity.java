@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Rol;
 import lombok.Getter;
 import lombok.Setter;
 @Entity(name="employee")
@@ -22,6 +23,6 @@ public class EmployeeEntity {
 	
 	private String addres;
 	
-	private String rol;
+	private Rol rol;
 
 }

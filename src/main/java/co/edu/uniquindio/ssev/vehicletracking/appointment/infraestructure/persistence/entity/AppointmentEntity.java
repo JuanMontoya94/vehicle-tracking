@@ -1,4 +1,4 @@
-package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
+package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity.VehicleEntity;
+import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.EmployeeEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +24,9 @@ public class AppointmentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private LocalDateTime date;
+	
 	private String state;
 	
 	@ManyToOne
@@ -34,10 +36,6 @@ public class AppointmentEntity {
 	@ManyToOne
     @JoinColumn(name = "idEmployee", nullable = false)
     private EmployeeEntity employee;
-	
-	@OneToOne
-	@JoinColumn(name = "idEntry", nullable = false)
-	private EntryEntity entry;
 	
 	@OneToMany
 	@JoinColumn(name = "id_appointment")

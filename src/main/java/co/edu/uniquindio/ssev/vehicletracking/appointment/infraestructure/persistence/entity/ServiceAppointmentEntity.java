@@ -1,4 +1,4 @@
-package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
+package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.EvidenceEntity;
+import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.ServiceEntity;
 import lombok.Getter;
 
 @Entity(name="service_appointment")
@@ -16,7 +18,7 @@ import lombok.Getter;
 public class ServiceAppointmentEntity {
 	
 	@Id
-	private Long idServiceAppointment;
+	private Long id;
 	
 	private String estado;
 	

@@ -18,16 +18,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	@Autowired
 	private CustomerEntityRepository customerEntityRepository;
 	
-
-	
 	@Override
 	public Customer create(Customer customer) {
 		
 		List<VehicleEntity> vehicleEntities = customer.getVehicles().stream()
 				.map(VehicleEntity::new)
 				.collect(Collectors.toList());
-		
-		
 		
 		CustomerEntity customerEntity = new CustomerEntity(customer.getId(),customer.getName(),customer.getPhone(),customer.getCorreo(), vehicleEntities);
 		customerEntity = customerEntityRepository.save(customerEntity);  

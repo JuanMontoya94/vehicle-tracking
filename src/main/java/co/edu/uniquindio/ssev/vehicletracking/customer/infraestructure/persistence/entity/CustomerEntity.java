@@ -35,8 +35,6 @@ public class CustomerEntity {
 	
 	private String phone;
 	
-	
-	
 	@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_customer")
 	private List<VehicleEntity> vehicles;

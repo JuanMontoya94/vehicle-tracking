@@ -3,16 +3,7 @@ package co.edu.uniquindio.ssev.vehicletracking.appointment.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity.VehicleEntity;
+import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,9 +17,15 @@ import lombok.Setter;
 public class Appointment {
 	
 	private Long id;
+	
 	private LocalDateTime date;
 	
+	private String state;
 	
-
+	private Vehicle vehicle;
+	
+    private Employee employee;
+	
+	private List<ServiceAppointment> serviceAppointments;
 
 }

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity.AppointmentEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,11 +18,11 @@ public class EntryEntity
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEntry;
+	private Long id;
 	private String state;
 	private int km;
 	
 	@OneToOne
-	@JoinColumn(name = "idAppointment", nullable = false)
+	@JoinColumn(name = "id", referencedColumnName = "id")
 	private AppointmentEntity appointment;
 }

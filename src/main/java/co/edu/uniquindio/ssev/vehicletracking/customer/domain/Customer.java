@@ -13,7 +13,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Customer {
 	
-	
 	private Long id;
 	
 	private String correo;
@@ -21,11 +20,6 @@ public class Customer {
 	private String name;
 	
 	private String phone;
-	
-	
-	
-	
-	
 	
 	private List<Vehicle> vehicles;
 
