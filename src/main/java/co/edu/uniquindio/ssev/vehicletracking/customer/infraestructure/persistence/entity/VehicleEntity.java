@@ -1,18 +1,25 @@
 package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Vehicle;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name="vehicle")
 @Getter
+@Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class VehicleEntity {
 	
 	@Id
+	private String plate;
+	
+	@Column(unique = true)
 	private String vin;
 	
 	private String model;
@@ -20,17 +27,5 @@ public class VehicleEntity {
 	private String year;
 	
 	private String brand;
-	
-	public VehicleEntity(Vehicle vehicle) {
-		this.vin = vehicle.getVin();
-		this.model=vehicle.getModel();
-		this.year=vehicle.getYear();
-		this.brand=vehicle.getBrand();
-	}
-	
-	public static Vehicle load(VehicleEntity vehicleEntity) {
-		return new Vehicle(vehicleEntity.getVin(), vehicleEntity.getModel(), vehicleEntity.getYear(), vehicleEntity.getBrand());
-	}
-	
 	
 }

@@ -15,7 +15,7 @@ public class Customer {
 	
 	private Long id;
 	
-	private String correo;
+	private String email;
 	
 	private String name;
 	

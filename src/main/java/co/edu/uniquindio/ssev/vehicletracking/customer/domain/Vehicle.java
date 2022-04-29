@@ -10,8 +10,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vehicle {
-	
-	
+
+    private String plate;
+  
 	private String vin;
 	
 	private String model;
