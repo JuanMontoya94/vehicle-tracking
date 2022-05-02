@@ -1,0 +1,13 @@
+{
+	"name": "Juancho",
+	"phone": "123456",
+	"vehicles": [
+		{
+			"plate": "AVS486",
+			"vin": "KDJ5860JA185428",
+			"brand": "kia",
+			"model": "cerato",
+			"year": "2020"
+		}
+	]
+}

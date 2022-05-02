@@ -26,8 +26,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 	}
 
 	@Override
-	public void delete(Customer customer) {
-		customerEntityRepository.deleteById(customer.getId());
+	public void delete(Long id) {
+		customerEntityRepository.deleteById(id);
 		
 	}
 

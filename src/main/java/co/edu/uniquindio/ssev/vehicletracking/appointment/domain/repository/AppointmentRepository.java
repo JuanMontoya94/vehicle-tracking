@@ -4,5 +4,7 @@ import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Appointment;
 
 public interface AppointmentRepository {
 
-	public Appointment create(Appointment appointment);
+	public Appointment save(Appointment appointment);
+	
+	public boolean exists(Long id);
 }

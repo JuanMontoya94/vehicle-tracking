@@ -26,7 +26,7 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
     private ModelMapper modelMapper;
 	
 	@Override
-	public Appointment create(Appointment appointment) {
+	public Appointment save(Appointment appointment) {
 	
 		AppointmentEntity appointmentEntity = modelMapper.map(appointment, AppointmentEntity.class);
 		appointmentEntity.setVehicle(vehicleEntityRepository.findById(appointment.getVehicle().getPlate()).get());
@@ -36,5 +36,11 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 		appointmentEntity = appointmentEntityRepository.save(appointmentEntity);
 		
 		return modelMapper.map(appointmentEntity, Appointment.class);
+	}
+	
+	@Override
+	public boolean exists(Long id) {
+		
+		return appointmentEntityRepository.existsById(id);
 	}
 }

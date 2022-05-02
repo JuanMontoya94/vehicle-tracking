@@ -8,6 +8,6 @@ public interface CustomerRepository {
 	
 	public boolean exists(Long id);
 	
-	public void delete(Customer customer);
+	public void delete(Long id);
 
 }

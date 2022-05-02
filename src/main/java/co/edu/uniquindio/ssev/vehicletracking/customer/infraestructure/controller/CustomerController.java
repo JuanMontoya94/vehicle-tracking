@@ -1,8 +1,10 @@
 package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,26 +37,22 @@ public class CustomerController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Customer> update (@RequestBody Customer customer){
+	public ResponseEntity<Object> update (@RequestBody Customer customer){
 		
 		try {
 			return ResponseEntity.ok(updateCustomer.update(customer));
-		} catch (CustomerNotFoundException c) {
-			return ResponseEntity.notFound().build();
+		} catch (CustomerNotFoundException exception) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
 		}
 		
 	}
 	
 	
-	@DeleteMapping
-	public ResponseEntity<Customer> delete(@RequestBody Long id){
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> delete(@PathVariable Long id){
 		
-		try {
-			return ResponseEntity.ok(deleteCustomer.delete(id));
-		} catch (CustomerNotFoundException c) {
-			return ResponseEntity.notFound().build();
-		}
-		
+		deleteCustomer.delete(id);
+		return ResponseEntity.ok("El cliente ha sido eliminado");
 	}
 	
  	
