@@ -16,8 +16,10 @@ import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persisten
 import co.edu.uniquindio.ssev.vehicletracking.employee.infraestructure.controller.persistence.entity.EmployeeEntity;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity(name="appointment")
+@ToString
 @Getter
 @Setter
 public class AppointmentEntity {

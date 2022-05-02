@@ -4,6 +4,10 @@ import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Customer;
 
 public interface CustomerRepository {
 	
-	public Customer create(Customer customer);
+	public Customer save(Customer customer);
+	
+	public boolean exists(Long id);
+	
+	public void delete(Customer customer);
 
 }

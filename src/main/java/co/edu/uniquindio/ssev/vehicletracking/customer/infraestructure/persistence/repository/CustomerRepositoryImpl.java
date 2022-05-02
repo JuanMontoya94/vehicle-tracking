@@ -13,16 +13,31 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 	@Autowired
 	private CustomerEntityRepository customerEntityRepository;
-
+	
     @Autowired
     private ModelMapper modelMapper;
 	
 	@Override
-	public Customer create(Customer customer) {
+	public Customer save(Customer customer) {
   	    CustomerEntity customerEntity = modelMapper.map(customer, CustomerEntity.class);
         customerEntity = customerEntityRepository.save(customerEntity);
         
         return modelMapper.map(customerEntity, Customer.class);
 	}
+
+	@Override
+	public void delete(Customer customer) {
+		customerEntityRepository.deleteById(customer.getId());
+		
+	}
+
+	@Override
+	public boolean exists(Long id) {
+		
+		return customerEntityRepository.existsById(id);
+	}
+
+	
+
 
 }
