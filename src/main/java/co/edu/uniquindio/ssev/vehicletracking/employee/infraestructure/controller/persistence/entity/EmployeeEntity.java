@@ -1,11 +1,11 @@
-package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
+package co.edu.uniquindio.ssev.vehicletracking.employee.infraestructure.controller.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Rol;
+import co.edu.uniquindio.ssev.vehicletracking.employee.domain.Rol;
 import lombok.Getter;
 import lombok.Setter;
 @Entity(name="employee")

@@ -3,6 +3,7 @@ package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persi
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity.VehicleEntity;
-import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.EmployeeEntity;
+import co.edu.uniquindio.ssev.vehicletracking.employee.infraestructure.controller.persistence.entity.EmployeeEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,10 +38,8 @@ public class AppointmentEntity {
     @JoinColumn(name = "idEmployee", nullable = false)
     private EmployeeEntity employee;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_appointment")
 	private List<ServiceAppointmentEntity> serviceAppointments;
-	
-
 
 }

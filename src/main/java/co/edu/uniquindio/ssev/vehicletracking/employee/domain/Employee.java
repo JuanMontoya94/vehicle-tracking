@@ -1,10 +1,13 @@
-package co.edu.uniquindio.ssev.vehicletracking.appointment.domain;
+package co.edu.uniquindio.ssev.vehicletracking.employee.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
 	
 	private Long idEmployee;

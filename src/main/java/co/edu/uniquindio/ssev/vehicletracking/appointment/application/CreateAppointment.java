@@ -1,5 +1,7 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.application;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ public class CreateAppointment {
 	private AppointmentRepository appointmentRepository;
 	
 	public Appointment create(Appointment appointment) {
+		appointment.setDate(LocalDateTime.now());
+		appointment.setState("Pendiente");
 		return appointmentRepository.create(appointment);
 	}
 

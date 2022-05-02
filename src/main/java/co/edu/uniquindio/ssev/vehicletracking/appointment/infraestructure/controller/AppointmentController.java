@@ -2,6 +2,8 @@ package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.contr
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +16,9 @@ public class AppointmentController {
 	
 	@Autowired
 	private CreateAppointment createAppointment;
-
-	public ResponseEntity<Appointment> create(Appointment appointment) {
+	
+	@PostMapping
+	public ResponseEntity<Appointment> create(@RequestBody Appointment appointment) {
 		return ResponseEntity.ok(createAppointment.create(appointment));
 	}
 }
