@@ -1,4 +1,4 @@
-package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
+package co.edu.uniquindio.ssev.vehicletracking.entry.infraestructure.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,6 @@ import lombok.Setter;
 public class EntryEntity 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String state;
 	private int km;
