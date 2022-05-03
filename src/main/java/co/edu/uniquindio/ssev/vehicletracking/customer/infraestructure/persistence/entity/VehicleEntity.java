@@ -31,7 +31,7 @@ public class VehicleEntity {
 	private String brand;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_customer", nullable = false)
+	@JoinColumn(name = "id_customer")
 	private CustomerEntity customer;
 	
 }
