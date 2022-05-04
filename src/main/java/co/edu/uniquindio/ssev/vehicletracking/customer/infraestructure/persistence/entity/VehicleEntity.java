@@ -3,8 +3,6 @@ package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persiste
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,9 +27,5 @@ public class VehicleEntity {
 	private String year;
 	
 	private String brand;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_customer")
-	private CustomerEntity customer;
 	
 }

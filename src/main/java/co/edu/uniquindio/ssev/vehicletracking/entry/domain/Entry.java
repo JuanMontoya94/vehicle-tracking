@@ -1,13 +1,12 @@
 package co.edu.uniquindio.ssev.vehicletracking.entry.domain;
 
-import co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity.AppointmentEntity;
+import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Appointment;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Entry 
-{
+public class Entry  {
 	
 	private Long id;
 	
@@ -15,5 +14,6 @@ public class Entry
 	
 	private int km;
 	
-	private AppointmentEntity appointment;
+	private Appointment appointment;
+	
 }

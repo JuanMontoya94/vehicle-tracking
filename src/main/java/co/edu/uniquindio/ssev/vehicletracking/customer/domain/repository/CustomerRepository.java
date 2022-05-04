@@ -9,5 +9,7 @@ public interface CustomerRepository {
 	public boolean exists(Long id);
 	
 	public void delete(Long id);
+	
+	public Customer findCustomer(Long id);
 
 }

@@ -18,9 +18,13 @@ public class EntryController {
 	private CreateEntry createEntry;
 	
 	@PostMapping
-	public ResponseEntity<Entry> create(@RequestBody Entry entry){
-		
-		return ResponseEntity.ok(createEntry.create(entry));
+	public ResponseEntity<Object> create(@RequestBody Entry entry){
+		try {
+			return ResponseEntity.ok(createEntry.create(entry));
+			
+		} catch (Exception exception) {
+			return ResponseEntity.internalServerError().body(exception.getCause().getMessage());
+		}
 	}
 
 }

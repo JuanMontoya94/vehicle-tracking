@@ -14,12 +14,13 @@ public class UpdateCustomer {
 	private CustomerRepository customerRepository;
 	
 	public Customer update(Customer customer) {
-		
 		if(customerRepository.exists(customer.getId())) {
-			return customerRepository.save(customer);
+			Customer savedCustomer = customerRepository.findCustomer(customer.getId());
+			savedCustomer.updateData(customer);
+			
+			return customerRepository.save(savedCustomer);
 		}
 		throw new CustomerNotFoundException("Cliente con id "+customer.getId()+" no existe!");
-		
 	}
 	
 }

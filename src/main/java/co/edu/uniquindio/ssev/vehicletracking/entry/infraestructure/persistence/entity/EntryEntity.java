@@ -10,18 +10,23 @@ import javax.persistence.OneToOne;
 import co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity.AppointmentEntity;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity(name="entry")
 @Getter
 @Setter
+@ToString
 public class EntryEntity 
 {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String state;
+	
 	private int km;
 	
 	@OneToOne
-	@JoinColumn(name = "id", referencedColumnName = "id")
+	@JoinColumn(name = "id_appointment", referencedColumnName = "id", unique = true)
 	private AppointmentEntity appointment;
 }
