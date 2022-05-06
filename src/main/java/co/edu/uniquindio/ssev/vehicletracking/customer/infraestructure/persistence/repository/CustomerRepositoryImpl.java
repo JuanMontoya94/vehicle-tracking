@@ -1,6 +1,9 @@
 package co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.repository;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +45,16 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
 		CustomerEntity customerEntity = customerEntityRepository.findById(id).get();
 		return modelMapper.map(customerEntity, Customer.class);
+	}
+	
+	@Override
+	public List<Customer> get() {
+		
+		List<CustomerEntity> customerEntity = customerEntityRepository.findAll();
+		List<Customer> listCustomer=modelMapper.map(customerEntity,new TypeToken<List<Customer>>() {}.getType());
+		
+		//return modelMapper.map(customerEntity, listCustomer);
+		return listCustomer;
 	}
 
 }

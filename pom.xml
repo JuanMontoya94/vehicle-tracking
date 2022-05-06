@@ -30,6 +30,11 @@
 		  <artifactId>modelmapper</artifactId>
 		  <version>3.0.0</version>
 		</dependency>
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-maven-plugin</artifactId>
+		   <version>2.5.4</version>
+		</dependency>
 		
 		<!-- 
 		<dependency>
@@ -37,19 +42,19 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		 
-		 
 		<dependency>
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
 		    <scope>runtime</scope>
 		</dependency>
-		-->
+		 -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
 		    <scope>runtime</scope>
 		</dependency>
+		
+		 
 		
 		
 		<dependency>
@@ -73,6 +78,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+				<workingDirectory>web/</workingDirectory>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
