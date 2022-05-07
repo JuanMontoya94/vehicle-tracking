@@ -1,6 +1,9 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.repository;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -50,4 +53,19 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 		
 		return modelMapper.map(appointmentEntity,Appointment.class);
 	}
+
+	@Override
+	public List<Appointment> get() {
+		
+		List<AppointmentEntity> appointmentEntity = appointmentEntityRepository.findAll();
+		List<Appointment> listAppointments = modelMapper.map(appointmentEntity,new TypeToken<List<Appointment>>() {}.getType());
+		
+		return listAppointments;
+	}
+
+	@Override
+	public void delete(Long id) {
+		appointmentEntityRepository.deleteById(id);
+	}
+		
 }

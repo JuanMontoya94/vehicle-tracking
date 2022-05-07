@@ -1,7 +1,8 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.domain.repository;
 
+import java.util.List;
+
 import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Appointment;
-import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Customer;
 
 public interface AppointmentRepository {
 
@@ -10,4 +11,9 @@ public interface AppointmentRepository {
 	public boolean exists(Long id);
 	
 	public Appointment findAppointment(Long id);
+	
+	public List<Appointment> get();
+	
+	public void delete(Long id);
+
 }
