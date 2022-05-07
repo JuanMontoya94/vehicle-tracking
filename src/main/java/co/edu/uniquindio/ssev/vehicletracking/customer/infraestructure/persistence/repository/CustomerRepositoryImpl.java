@@ -53,7 +53,6 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		List<CustomerEntity> customerEntity = customerEntityRepository.findAll();
 		List<Customer> listCustomer=modelMapper.map(customerEntity,new TypeToken<List<Customer>>() {}.getType());
 		
-		//return modelMapper.map(customerEntity, listCustomer);
 		return listCustomer;
 	}
 

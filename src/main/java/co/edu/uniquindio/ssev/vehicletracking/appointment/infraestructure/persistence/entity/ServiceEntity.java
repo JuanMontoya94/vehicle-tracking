@@ -1,4 +1,4 @@
-package co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity;
+package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

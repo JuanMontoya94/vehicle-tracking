@@ -43,4 +43,11 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 		
 		return appointmentEntityRepository.existsById(id);
 	}
+
+	@Override
+	public Appointment findAppointment(Long id) {
+		AppointmentEntity appointmentEntity = appointmentEntityRepository.findById(id).get();
+		
+		return modelMapper.map(appointmentEntity,Appointment.class);
+	}
 }

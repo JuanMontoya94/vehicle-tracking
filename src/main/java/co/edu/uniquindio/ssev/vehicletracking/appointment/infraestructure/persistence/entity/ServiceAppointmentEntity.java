@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.EvidenceEntity;
-import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.ServiceEntity;
 import lombok.Getter;
 
 @Entity(name="service_appointment")
