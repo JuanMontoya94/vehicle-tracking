@@ -57,7 +57,7 @@ public class AppointmentController {
 		return getAppointment.get();
 	}
 	
-	@DeleteMapping("/{id")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<String> delete(@PathVariable Long id){
 		deleteAppointment.delete(id);
 		return ResponseEntity.ok("la cita ha sido eliminada");

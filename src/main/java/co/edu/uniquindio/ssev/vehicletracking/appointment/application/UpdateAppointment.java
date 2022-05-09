@@ -16,12 +16,12 @@ public class UpdateAppointment {
 	public Appointment update(Appointment appointment) {
 		
 		if(appointmentRepository.exists(appointment.getId())) {
-			Appointment savedAppointment =appointmentRepository.findAppointment(appointment.getId());
+			Appointment savedAppointment = appointmentRepository.findAppointment(appointment.getId());
 			savedAppointment.updateData(appointment);
 			
 			return appointmentRepository.save(savedAppointment);
-
 		}
+		
 		throw new AppointmentNotFoundException("La cita con id "+appointment.getId()+" no existe!");
 	}
 }

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Customer;
 import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Vehicle;
 import co.edu.uniquindio.ssev.vehicletracking.employee.domain.Employee;
 import lombok.AllArgsConstructor;
