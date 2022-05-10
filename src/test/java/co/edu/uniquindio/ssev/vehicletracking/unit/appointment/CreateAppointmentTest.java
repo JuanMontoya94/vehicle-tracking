@@ -42,7 +42,7 @@ public class CreateAppointmentTest {
 		
 		Appointment savedAppointment = createAppointment.create(appointment);
 		assertThat(savedAppointment.getDate()).isNotNull();
-		assertThat(savedAppointment.getState()).isNotNull();
+		assertThat(savedAppointment.getStatus()).isNotNull();
 		assertThat(savedAppointment.getVehicle().getPlate()).isEqualTo(vehicle.getPlate());	
 		assertThat(savedAppointment.getEmployee().getIdEmployee()).isEqualTo(employee.getIdEmployee());
 	}

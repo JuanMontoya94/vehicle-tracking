@@ -33,6 +33,7 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 	
 		AppointmentEntity appointmentEntity = modelMapper.map(appointment, AppointmentEntity.class);
 		appointmentEntity.setVehicle(vehicleEntityRepository.findById(appointment.getVehicle().getPlate()).get());
+
 		
 		appointmentEntity.setEmployee(employeeEntityRepository.findById(appointment.getEmployee().getIdEmployee()).get());
 		

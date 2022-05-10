@@ -16,7 +16,7 @@ public class CreateAppointment {
 	
 	public Appointment create(Appointment appointment) {
 		appointment.setDate(LocalDateTime.now());
-		appointment.setState("Pendiente");
+		appointment.setStatus("Pendiente");
 		return appointmentRepository.save(appointment);
 	}
 

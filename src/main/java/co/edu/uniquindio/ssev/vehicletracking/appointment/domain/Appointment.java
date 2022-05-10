@@ -7,6 +7,7 @@ import java.util.List;
 import co.edu.uniquindio.ssev.vehicletracking.customer.domain.Vehicle;
 import co.edu.uniquindio.ssev.vehicletracking.employee.domain.Employee;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,13 +17,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Appointment {
 	
 	private Long id;
 	
 	private LocalDateTime date;
 	
-	private String state;
+	private String status;
 	
 	private Vehicle vehicle;
 	
@@ -31,23 +33,21 @@ public class Appointment {
 	private List<ServiceAppointment> serviceAppointments =  new ArrayList<>();
 	
 	public void updateData(Appointment appointment) {
-		if(appointment.getDate()!=null) {
+		if(appointment.getDate() != null) {
 			this.setDate(appointment.getDate());
 		}
-		if(appointment.getState()!=null) {
-			this.setState(appointment.getState());
+		if(appointment.getStatus() != null) {
+			this.setStatus(appointment.getStatus());
 		}
-		if(appointment.getVehicle()!=null) {
+		if(appointment.getVehicle() != null) {
 			this.setVehicle(appointment.getVehicle());
 		}
-		if(appointment.getEmployee()!=null) {
+		if(appointment.getEmployee() != null) {
 			this.setEmployee(appointment.getEmployee());
 		}
 		if(!appointment.getServiceAppointments().isEmpty()) {
 			this.getServiceAppointments().addAll(appointment.getServiceAppointments());
 		}
-		
-		
 	}
 
 }
