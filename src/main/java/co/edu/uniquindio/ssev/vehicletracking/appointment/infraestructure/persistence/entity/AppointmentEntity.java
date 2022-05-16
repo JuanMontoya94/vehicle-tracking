@@ -33,7 +33,7 @@ public class AppointmentEntity {
 	private LocalDateTime date;
 	
 	@Column(nullable = false)
-	private String state;
+	private String status;
 	
 	@ManyToOne
     @JoinColumn(name = "idVehicle", nullable = false)
