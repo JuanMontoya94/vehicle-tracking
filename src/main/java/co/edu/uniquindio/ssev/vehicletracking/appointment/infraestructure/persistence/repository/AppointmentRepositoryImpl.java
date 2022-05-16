@@ -35,7 +35,7 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 		appointmentEntity.setVehicle(vehicleEntityRepository.findById(appointment.getVehicle().getPlate()).get());
 
 		
-		appointmentEntity.setEmployee(employeeEntityRepository.findById(appointment.getEmployee().getIdEmployee()).get());
+		appointmentEntity.setEmployee(employeeEntityRepository.findById(appointment.getEmployee().getId()).get());
 		
 		appointmentEntity = appointmentEntityRepository.save(appointmentEntity);
 		

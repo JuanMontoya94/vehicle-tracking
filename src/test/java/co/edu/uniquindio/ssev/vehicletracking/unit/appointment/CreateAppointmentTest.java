@@ -33,7 +33,7 @@ public class CreateAppointmentTest {
 		Vehicle vehicle = new Vehicle();
 		vehicle.setPlate("KMP123");
 		Employee employee = new Employee();
-		employee.setIdEmployee((long) 10);
+		employee.setId(10L);
 		Appointment appointment = new Appointment();
 		appointment.setVehicle(vehicle);
 		appointment.setEmployee(employee);
@@ -44,7 +44,7 @@ public class CreateAppointmentTest {
 		assertThat(savedAppointment.getDate()).isNotNull();
 		assertThat(savedAppointment.getStatus()).isNotNull();
 		assertThat(savedAppointment.getVehicle().getPlate()).isEqualTo(vehicle.getPlate());	
-		assertThat(savedAppointment.getEmployee().getIdEmployee()).isEqualTo(employee.getIdEmployee());
+		assertThat(savedAppointment.getEmployee().getId()).isEqualTo(employee.getId());
 	}
 	
 	

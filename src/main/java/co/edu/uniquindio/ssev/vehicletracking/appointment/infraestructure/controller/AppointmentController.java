@@ -24,7 +24,7 @@ import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.exception.Appoi
 
 @RestController
 @RequestMapping("/appointment")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin("*")
 public class AppointmentController {
 	
 	@Autowired
