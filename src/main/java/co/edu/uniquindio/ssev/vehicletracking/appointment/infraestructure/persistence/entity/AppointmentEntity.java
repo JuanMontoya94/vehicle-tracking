@@ -1,6 +1,7 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,6 +17,7 @@ import javax.persistence.OneToMany;
 import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.entity.VehicleEntity;
 import co.edu.uniquindio.ssev.vehicletracking.employee.infraestructure.controller.persistence.entity.EmployeeEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -23,6 +25,7 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
+@NoArgsConstructor
 public class AppointmentEntity {
 	
 	@Id
@@ -45,6 +48,6 @@ public class AppointmentEntity {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_appointment")
-	private List<ServiceAppointmentEntity> serviceAppointments;
+	private List<ServiceAppointmentEntity> serviceAppointments = new ArrayList<>();
 
 }

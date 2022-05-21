@@ -39,6 +39,11 @@ public class AppointmentController {
 	@Autowired
 	private DeleteAppointment deleteAppointment;
 	
+	@GetMapping
+	public List<Appointment> get(){
+		return getAppointment.get();
+	}
+	
 	@PostMapping
 	public ResponseEntity<Appointment> create(@RequestBody Appointment appointment) {
 		return ResponseEntity.ok(createAppointment.create(appointment));
@@ -52,11 +57,6 @@ public class AppointmentController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
 
 		}
-	}
-	
-	@GetMapping
-	public List<Appointment> get(){
-		return getAppointment.get();
 	}
 	
 	@DeleteMapping("/{id}")

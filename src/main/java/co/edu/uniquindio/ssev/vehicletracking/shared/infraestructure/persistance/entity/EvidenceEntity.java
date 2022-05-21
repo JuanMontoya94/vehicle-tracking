@@ -6,19 +6,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name="evidence")
 @Getter
 @Setter
+@NoArgsConstructor
+@Entity(name="evidence")
 public class EvidenceEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String urlRecourse;
+	private String name;
 	
-	private String tipo;
+	private String type;
 
 }

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.Appointment;
 import co.edu.uniquindio.ssev.vehicletracking.appointment.domain.repository.AppointmentRepository;
 import co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity.AppointmentEntity;
+import co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity.ServiceAppointmentEntity;
 import co.edu.uniquindio.ssev.vehicletracking.customer.infraestructure.persistence.repository.VehicleEntityRepository;
 import co.edu.uniquindio.ssev.vehicletracking.employee.infraestructure.controller.persistence.repository.EmployeeEntityRepository;
 
@@ -26,19 +28,30 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
 	private EmployeeEntityRepository employeeEntityRepository;
 	
 	@Autowired
+	private ServiceRepository serviceRepository;
+	
+	@Autowired
     private ModelMapper modelMapper;
 	
 	@Override
 	public Appointment save(Appointment appointment) {
 	
 		AppointmentEntity appointmentEntity = modelMapper.map(appointment, AppointmentEntity.class);
-		appointmentEntity.setVehicle(vehicleEntityRepository.findById(appointment.getVehicle().getPlate()).get());
-
+		List<ServiceAppointmentEntity> serviceAppointments = appointment.getServiceAppointments().stream()
+		    .map(serviceAppointment -> {
+		      ServiceAppointmentEntity serviceAppointmentEntity = new ServiceAppointmentEntity();
+		      serviceAppointmentEntity.setStatus("Abierto");
+		      serviceAppointmentEntity.setService(serviceRepository.findById(serviceAppointment.getService().getId()).get());
+		      
+		      return serviceAppointmentEntity;
+		    })
+		    .collect(Collectors.toList());		
 		
+		appointmentEntity.setVehicle(vehicleEntityRepository.findById(appointment.getVehicle().getPlate()).get());
 		appointmentEntity.setEmployee(employeeEntityRepository.findById(appointment.getEmployee().getId()).get());
+		appointmentEntity.setServiceAppointments(serviceAppointments);
 		
 		appointmentEntity = appointmentEntityRepository.save(appointmentEntity);
-		
 		return modelMapper.map(appointmentEntity, Appointment.class);
 	}
 	

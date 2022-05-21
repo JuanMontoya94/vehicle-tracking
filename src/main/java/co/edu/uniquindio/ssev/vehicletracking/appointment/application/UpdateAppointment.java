@@ -22,6 +22,6 @@ public class UpdateAppointment {
 			return appointmentRepository.save(savedAppointment);
 		}
 		
-		throw new AppointmentNotFoundException("La cita con id "+appointment.getId()+" no existe!");
+		throw new AppointmentNotFoundException("La cita con id "+ appointment.getId() +" no existe!");
 	}
 }

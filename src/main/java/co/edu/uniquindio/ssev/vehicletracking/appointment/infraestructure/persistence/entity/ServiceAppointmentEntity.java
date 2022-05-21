@@ -1,5 +1,6 @@
 package co.edu.uniquindio.ssev.vehicletracking.appointment.infraestructure.persistence.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,22 +14,25 @@ import javax.persistence.OneToMany;
 
 import co.edu.uniquindio.ssev.vehicletracking.shared.infraestructure.persistance.entity.EvidenceEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity(name="service_appointment")
 @Getter
+@Setter
+@NoArgsConstructor
 public class ServiceAppointmentEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String estado;
+	private String status;
 	
 	@ManyToOne
 	private ServiceEntity service;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_service_appointment")
-	private List<EvidenceEntity> evidences;
-
+	private List<EvidenceEntity> evidences = new ArrayList<>();
 }

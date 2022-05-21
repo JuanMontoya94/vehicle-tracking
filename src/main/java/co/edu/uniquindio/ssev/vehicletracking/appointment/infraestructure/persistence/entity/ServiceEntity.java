@@ -6,11 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name="service")
 @Getter
 @Setter
+@NoArgsConstructor
 public class ServiceEntity {
 	
 	@Id
@@ -19,4 +21,7 @@ public class ServiceEntity {
 	
 	private String description;
 
+	public ServiceEntity(String description) {
+	  this.description = description;
+	}
 }
