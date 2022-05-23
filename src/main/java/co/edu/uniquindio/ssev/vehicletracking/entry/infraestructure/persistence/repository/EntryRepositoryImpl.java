@@ -1,6 +1,9 @@
 package co.edu.uniquindio.ssev.vehicletracking.entry.infraestructure.persistence.repository;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -30,5 +33,13 @@ public class EntryRepositoryImpl implements EntryRepository {
 		entryEntity = entryEntityRepository.save(entryEntity);
 
 		return modelMapper.map(entryEntity,Entry.class);
+	}
+
+	@Override
+	public List<Entry> get() {
+		
+		List<EntryEntity> entryEntity = entryEntityRepository.findAll();
+		List<Entry> listEntries = modelMapper.map(entryEntity, new TypeToken<List<Entry>>() {}.getType());
+		return listEntries;
 	}
 }
