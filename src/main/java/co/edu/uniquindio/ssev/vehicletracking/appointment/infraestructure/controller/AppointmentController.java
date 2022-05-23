@@ -45,8 +45,13 @@ public class AppointmentController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Appointment> create(@RequestBody Appointment appointment) {
-		return ResponseEntity.ok(createAppointment.create(appointment));
+	public ResponseEntity<Object> create(@RequestBody Appointment appointment) {
+		try {
+			return ResponseEntity.ok(createAppointment.create(appointment));
+		} catch (AppointmentNotFoundException exception) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+
+		}
 	}
 	
 	@PatchMapping
