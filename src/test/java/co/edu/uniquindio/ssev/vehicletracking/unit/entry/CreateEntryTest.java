@@ -21,6 +21,7 @@ public class CreateEntryTest {
 	@Mock
 	private EntryRepository entryRepository;
 	
+	
 	@BeforeEach
 	public void init() {
 		MockitoAnnotations.openMocks(this);
